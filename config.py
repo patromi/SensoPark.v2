@@ -20,9 +20,9 @@ class Config:
     CAPTCHA_HEIGHT = 60
     SESSION_TYPE = 'sqlalchemy'
     SQL_PASSWORD = os.environ.get('SQL_PASSWORD')
-    SQL_IP = os.environ.get('SLQ_IP')
-    SQL_DB = os.environ.get('SLQ_DB')
-    SQL_NAME = os.environ.get('SLQ_NAME')
+    SQL_IP = os.environ.get('SQL_IP')
+    SQL_DB = os.environ.get('SQL_DB')
+    SQL_NAME = os.environ.get('SQL_NAME')
     @staticmethod
     def init_app(app):
         pass
