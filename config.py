@@ -19,7 +19,10 @@ class Config:
     CAPTCHA_WIDTH = 160
     CAPTCHA_HEIGHT = 60
     SESSION_TYPE = 'sqlalchemy'
-
+    SQL_PASSWORD = os.environ.get('SQL_PASSWORD')
+    SQL_IP = os.environ.get('SLQ_IP')
+    SQL_DB = os.environ.get('SLQ_DB')
+    SQL_NAME = os.environ.get('SLQ_NAME')
     @staticmethod
     def init_app(app):
         pass
@@ -27,16 +30,17 @@ class Config:
 
 class DevelopmentConfig(Config):
     DEBUG = True
-    SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://bazadanych:Pa2H8vrz3h4PfFNO@34.107.97.144/Sensopark'
+
+    SQLALCHEMY_DATABASE_URI = f'mysql+pymysql://{Config.SQL_NAME}:{Config.SQL_PASSWORD}@{Config.SQL_IP}/{Config.SQL_DB}'
 
 
 class TestingConfig(Config):
     TESTING = True
-    SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://bazadanych:Pa2H8vrz3h4PfFNO@34.107.97.144/Sensopark'
+    SQLALCHEMY_DATABASE_URI = f'mysql+pymysql://{Config.SQL_NAME}:{Config.SQL_PASSWORD}@{Config.SQL_IP}/{Config.SQL_DB}'
 
 
 class ProductionConfig(Config):
-    SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://bazadanych:Pa2H8vrz3h4PfFNO@34.107.97.144/Sensopark'
+    SQLALCHEMY_DATABASE_URI = f'mysql+pymysql://{Config.SQL_NAME}:{Config.SQL_PASSWORD}@{Config.SQL_IP}/{Config.SQL_DB}'
 
 
 config = {
