@@ -127,7 +127,7 @@ Manager
 - Has access to manage your parking lots, change data, rezervations etc.
 User
 - Has access to changes yours data, rezervations 
-## Funkcje strony Internetowej
+## Website functions
 - Account registration
 - Sending confirmation email
 - Account login
