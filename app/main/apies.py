@@ -5,7 +5,7 @@ from . import main
 from flask_login import login_required
 from ..decorators import manager_required
 from ..alcorythm import alcorythm
-
+import time
 
 class NoteSchema(ma.SQLAlchemyAutoSchema):
     class Meta:
@@ -64,17 +64,12 @@ def api_user_parking(id):
 @main.route('/parking_reservation/<id>/<day>/')
 def parking_reservation_api(id, day):
     reservation = models.Parking_reservation.query.filter_by(parking_id=id, date_reservation=day).all()
-    # print(reservation)
-
     parking = models.Parking.query.filter_by(id=id).first()
     if parking == None:
         abort(404)
     start = str(day) + ' 00:00:00'
     end = str(day) + ' 00:30:00'
     list = []
-    # print(start)
-    # print(end)
-    # print(day)
     if list.append(alcorythm.alcorythm_reservation_max_function(id, start, end, reservation)) == False:
         abort(404)
     x = {
@@ -84,9 +79,6 @@ def parking_reservation_api(id, day):
     }
     print(x)
     return jsonify(x)
-
-
-import time
 
 
 @main.route('/opengate/<id>')

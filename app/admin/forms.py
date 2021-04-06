@@ -14,8 +14,6 @@ class LoginForm(FlaskForm):
                                       render_kw={"placeholder": "Wpisz ilość miejsc na parkingu"})
     name = StringField('', validators=[DataRequired(), Length(3, 20)],
                        render_kw={"placeholder": "Wpisz nazwe parkingu"})
-    # Regexp('[A-Za-z]',
-    #      'Imię może składać się wyłącznie z liter')])
     description = StringField('', validators=[DataRequired(), Length(3, 200)],
                               render_kw={"placeholder": "Wpisz opis parkingu"})
     localisation = StringField('', validators=[DataRequired()], render_kw={"placeholder": "Wpisz współrzędne"})

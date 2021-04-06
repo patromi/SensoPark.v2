@@ -1,4 +1,3 @@
-
 from flask import *
 from config import Config
 from threading import Thread
