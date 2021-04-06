@@ -46,7 +46,3 @@ def create_app(config_name):
     return app
 
 
-async def count():
-    print("One")
-    await asyncio.sleep(1)
-    print("Two")
