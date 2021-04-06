@@ -109,11 +109,11 @@ SQLite (Linux, macOS) sqlite:////absolute/path/to/the_file
 SQLite (Windows) sqlite:///c:////absolute/path/to/the_file
 
 ### Create all of tabels in database
-** When our program connects to database, open a local cmd and type: **
+**When our program connects to database, open a local cmd and type: **
 - _flask shell_
 - _from app import db_
 - _db.create_all()_
-- 
+
 ### Create all of Roles in database
 - _from app import models_
 - __models.Role.insert_role()__
