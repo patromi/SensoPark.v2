@@ -123,8 +123,10 @@ SQLite (Windows) sqlite:///c:////absolute/path/to/the_file
 Administator
 - Has access to everything: 
 - Admin Panel, where he can change the user's/parking's data, rezervations
+
 Manager
 - Has access to manage your parking lots, change data, rezervations etc.
+
 User
 - Has access to changes yours data, rezervations 
 ## Website functions
