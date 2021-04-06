@@ -4,12 +4,12 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 
 
 class Config:
-    SECRET_KEY = 'jebacpis'
+    SECRET_KEY = os.environ.get('SECRET_KEY')
     MAIL_SERVER = 'smtp.googlemail.com'
     MAIL_PORT = int(os.environ.get('MAIL_PORT', '587'))
     MAIL_USE_TLS = True
-    MAIL_USERNAME = 'sensoparking@gmail.com'
-    MAIL_PASSWORD = 'ocRsiASLX4taMpXg'
+    MAIL_USERNAME = os.environ.get('MAIL_USERNAME')
+    MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD')
     MAIL_SUBJECT_PREFIX = 'SensoPark'
     MAIL_SENDER = 'Serwis SensoPark'
     ADMIN = os.environ.get('FLASKY_ADMIN')
