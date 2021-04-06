@@ -22,7 +22,7 @@ Dla systemu Linux lub MacOS
 -__export _ SQL_NAME=[SQL_NAME]_ 
 -__export _ ADMIN=[ADMIN]_ 
 
-**Wybór innej bazy danych niż mysql**
+### **Wybór innej bazy danych niż mysql**
 W pliku config należy zmienić linijkę 34,39,43 (Domyślnie jest wybrana baza Mysql+pymysql)
 
 postgresql://nazwa_użytkownika:hasło@nazwa_hosta/baza_danych
@@ -30,3 +30,118 @@ postgresql://nazwa_użytkownika:hasło@nazwa_hosta/baza_danych
 SQLite (Linux, macOS) sqlite:////bezwzględna/ścieżka/do/bazy_danych
 
 SQLite (Windows) sqlite:///c:/bezwzględna/ścieżka/do/bazy_danych
+### Utworzenie wszystkich tabel w bazie danych
+
+**Kiedy nasz program połączy się z bazą danych należy wejść ponownie w nasze środowisko i wpisać komendy**
+- _flask shell_
+- _from app import db_
+- _db.create_all()_
+### Utworzenie wszystkich ról w bazie danych
+- _from app import models_
+- __models.Role.insert_role()__
+
+**Disclaimer** Gdyby utworzyła się tylko jedna ranga należy skomentować pokolei Role administatora i wykonać funkcję jeszcze raz a potem zarządcy i tak samo
+### Znaczenie ról w naszym systemie
+Administator
+- Ma dostęp do wszystkiego tj. Panelu administatora gdzie może zmieniać informacje użytkowników, parkingów, rezerwacji etc.
+
+Zarządca
+- Ma dostęp do zarządzania swoim parkingiem tj. zmienianiem danych, rezerwacji itp.
+
+Użytkownik
+- Ma dostęp do zmieniania swoich informacji jak i do rezerwacji
+## Funkcje strony Internetowej
+- Rejestracja
+-  Wysyłanie linków z potwierdzeniem konta
+-  Logowanie
+-  Obsługę Sesji użytkownika
+-  Walidacje danych np. w logowaniu, rejestracji, tworzeniu parkingu
+-  Stworzenie nowego Parkingu
+-  Rezerwacji parkingów na daną godzinę i datę wraz ze specjalnym 
+algorytmem uniemożliwiającym zarezerwowanie miejsca kiedy nie ma 
+miejsca
+- Obsługę uprawnień
+- Zabezpieczenie Hasła za pomocą funkcji jednostronnej SHA256
+- Panel Administatora
+- Panel Menadżera
+- Panel Użytkownika
+- API (np. wykorzystywane m.in. do rezerwacji parkingu)
+- Tworzenie odpowiednich dostępów dla danego typu użytkownika
+- Stópka oraz pasek nawigacyjny są dziedziczone na każdej podstronie, 
+umieszczone są w specjalnym pliku głównym
+- Wyszukiwarkę po słowie kluczowym: Parkingu, użytkownika, zarządców 
+itp.
+- W zależności od uprawnienia możliwość modyfikacji danych (np. 
+zarządca może zmieniać informacje tylko o swoim parkingu, admin do 
+wszystkiego)
+- I wiele wiele więcej!
+
+# English
+
+### Welcome to website SensoPark documentation!
+
+## Fast Setup
+Having downloaded our repository we must define local environ. Open local cmd and type the commands (For windows):
+- _set FLASK_APP=sensopark.py_ 
+- _set_ MAIL_USERNAME=[GMAIL EMAIL]_ // Here we type the gmail adress (Remember to turn on a third person access in account settings) 
+- _set_ MAIL_PASSWORD=[GMAIL PASSWORD] _// Type the password
+- _set_ SQL_IP=[SQL_IP] _ // We enter the IP address in our database
+- _set_ SQL_DB=[SQL_DB]_ // Here we type the name of database
+- __set_ SQL_NAME=[SQL_NAME]_ // Here we enter the name of instance
+- __set_ ADMIN=[ADMIN]_ // Here we enter mail adress that will automatically be the administrator after registration
+
+For linux or MacOS
+-_export FLASK_APP=sensopark.py_
+-_export _ MAIL_USERNAME=[GMAIL EMAIL]_ 
+-_export _ MAIL_PASSWORD=[GMAIL PASSWORD] _
+-_export _ SQL_IP=[SQL_IP] _
+-_export _ SQL_DB=[SQL_DB]_ 
+-__export _ SQL_NAME=[SQL_NAME]_ 
+-__export _ ADMIN=[ADMIN]_ 
+
+### **Choosing a database other than MySQL**
+In config file lines 34,39,43 should be changed to: (Deafult is Mysql+pymsql)
+
+Postgresql://username:password@hostname/database
+
+SQLite (Linux, macOS) sqlite:////absolute/path/to/the_file
+
+SQLite (Windows) sqlite:///c:////absolute/path/to/the_file
+
+### Create all of tabels in database
+** When our program connects to database, open a local cmd and type: **
+- _flask shell_
+- _from app import db_
+- _db.create_all()_
+- 
+### Create all of Roles in database
+- _from app import models_
+- __models.Role.insert_role()__
+**Disclaimer** If only one rank was created, you should comment on the administration's roles and run the function again, with manager the same.
+
+### Types of Roles
+Administator
+- Has access to everything: 
+- Admin Panel, where he can change the user's/parking's data, rezervations
+Manager
+- Has access to manage your parking lots, change data, rezervations etc.
+User
+- Has access to changes yours data, rezervations 
+## Funkcje strony Internetowej
+- Account registration
+- Sending confirmation email
+- Account login
+- User session handling
+- Data validation 
+- Create a new parking
+- Reservation for date and time with a special validation algorythm
+- Handling of permissions
+- Password protection with SHA256 one-way function
+- Admin Panel
+- Manager Panel
+- User Panel
+- API 
+- Creating appropriate accesses for a given type of user
+- Inherit navbar/sidebar
+- Search engine by keyword: Parking lot, user, managers etc.
+- And much much more!
