@@ -11,8 +11,6 @@ def make_shell_context():
 
 @app.cli.command()
 def test():
-    """Uruchom testy jednostkowe. Narazie nie działa pieprzy sie cos z bazą danych
-    tzn. wszystko sie usuwa xD"""
     import unittest
     tests = unittest.TestLoader().discover('test')
     unittest.TextTestRunner(verbosity=2).run(tests)
