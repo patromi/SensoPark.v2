@@ -4,12 +4,12 @@ _**Szybkie uruchomienie**_
 
 Mając pobrane nasze repozytorium musimy określić zmienne środowiskowe. Aby to zrobić należy wpisać w naszym środowsku (dla systemu windows):
 
-- _set FLASK_APP=sensopark.py_
-- _set MAIL_USERNAME=[GMAIL EMAIL]_ //Podajemy swój email na portalu gmail. Należy pamiętać aby pozwolić aplikacją na dostęp do konta
+- _ set FLASK_APP=sensopark.py_
+- _ set MAIL_USERNAME=[GMAIL EMAIL]_ //Podajemy swój email na portalu gmail. Należy pamiętać aby pozwolić aplikacją na dostęp do konta
 - _ set MAIL_PASSWORD=[GMAIL PASSWORD]_ // Podajemy hasło
-- _set SQL_IP=[SQL_IP]_ // Podajemy IP naszej bazy danych (Narazie tylko mysql)
-- _set SQL_DB=[SQL_DB]_ // Podajemy nazwe bazy danych na której bedziemy pracować
-- _set SQL_NAME=[SQL_NAME]_ // Podajemy nazwe naszej instancji
+- _ set SQL_IP=[SQL_IP]_ // Podajemy IP naszej bazy danych (Narazie tylko mysql)
+- _ set SQL_DB=[SQL_DB]_ // Podajemy nazwe bazy danych na której bedziemy pracować
+- _ set SQL_NAME=[SQL_NAME]_ // Podajemy nazwe naszej instancji
 - _ set ADMIN=[ADMIN]_ // podajemy maila który po zarajestrowaniu będzie automatycznie administatorem
 
 Dla systemu Linux lub MacOS
