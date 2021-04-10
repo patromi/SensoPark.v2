@@ -14,13 +14,13 @@ Mając pobrane nasze repozytorium musimy określić zmienne środowiskowe. Aby t
 
 Dla systemu Linux lub MacOS
 
--_export FLASK_APP=sensopark.py_
--_export _ MAIL_USERNAME=[GMAIL EMAIL]_ 
--_export _ MAIL_PASSWORD=[GMAIL PASSWORD] _
--_export _ SQL_IP=[SQL_IP] _
--_export _ SQL_DB=[SQL_DB]_ 
--__export _ SQL_NAME=[SQL_NAME]_ 
--__export _ ADMIN=[ADMIN]_ 
+- _export FLASK_APP=sensopark.py_
+- _export _ MAIL_USERNAME=[GMAIL EMAIL]_ 
+- _export _ MAIL_PASSWORD=[GMAIL PASSWORD] _
+- _export _ SQL_IP=[SQL_IP] _
+- _export _ SQL_DB=[SQL_DB]_ 
+- __export _ SQL_NAME=[SQL_NAME]_ 
+- __export _ ADMIN=[ADMIN]_ 
 
 ### **Wybór innej bazy danych niż mysql**
 W pliku config należy zmienić linijkę 34,39,43 (Domyślnie jest wybrana baza Mysql+pymysql)
