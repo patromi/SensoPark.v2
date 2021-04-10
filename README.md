@@ -6,21 +6,21 @@ Mając pobrane nasze repozytorium musimy określić zmienne środowiskowe. Aby t
 
 - _set FLASK_APP=sensopark.py_
 - _set MAIL_USERNAME=[GMAIL EMAIL]_ //Podajemy swój email na portalu gmail. Należy pamiętać aby pozwolić aplikacją na dostęp do konta
-- _set MAIL_PASSWORD=[GMAIL PASSWORD]_ // Podajemy hasło
+- _ set MAIL_PASSWORD=[GMAIL PASSWORD]_ // Podajemy hasło
 - _set SQL_IP=[SQL_IP]_ // Podajemy IP naszej bazy danych (Narazie tylko mysql)
 - _set SQL_DB=[SQL_DB]_ // Podajemy nazwe bazy danych na której bedziemy pracować
 - _set SQL_NAME=[SQL_NAME]_ // Podajemy nazwe naszej instancji
-- _set ADMIN=[ADMIN]_ // podajemy maila który po zarajestrowaniu będzie automatycznie administatorem
+- _ set ADMIN=[ADMIN]_ // podajemy maila który po zarajestrowaniu będzie automatycznie administatorem
 
 Dla systemu Linux lub MacOS
 
-- _export FLASK_APP=sensopark.py_
-- _export MAIL_USERNAME=[GMAIL EMAIL]_ 
-- _export  MAIL_PASSWORD=[GMAIL PASSWORD] _
-- _export  SQL_IP=[SQL_IP] _
-- _export  SQL_DB=[SQL_DB]_ 
-- _export  SQL_NAME=[SQL_NAME]_ 
-- _export  ADMIN=[ADMIN]_ 
+- _ export FLASK_APP=sensopark.py_
+- _ export MAIL_USERNAME=[GMAIL EMAIL]_ 
+- _ export  MAIL_PASSWORD=[GMAIL PASSWORD] _
+- _ export  SQL_IP=[SQL_IP] _
+- _ export  SQL_DB=[SQL_DB]_ 
+- _ export  SQL_NAME=[SQL_NAME]_ 
+- _ export  ADMIN=[ADMIN]_ 
 
 ### **Wybór innej bazy danych niż mysql**
 W pliku config należy zmienić linijkę 34,39,43 (Domyślnie jest wybrana baza Mysql+pymysql)
