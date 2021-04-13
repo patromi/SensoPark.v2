@@ -5,6 +5,7 @@ _**Szybkie uruchomienie**_
 Mając pobrane nasze repozytorium musimy określić zmienne środowiskowe. Aby to zrobić należy wpisać w naszym środowsku (dla systemu windows):
 
 - _set FLASK_APP=sensopark.py_
+- _set SECRET_KEY=[SECRET KEY] // Podajmy tutaj nasz klucz który będzie szyfrować nam informacje_
 - _set MAIL_USERNAME=[GMAIL EMAIL]_ //Podajemy swój email na portalu gmail. Należy pamiętać aby pozwolić aplikacją na dostęp do konta
 - _set MAIL_PASSWORD=[GMAIL PASSWORD]_ // Podajemy hasło
 - _set SQL_IP=[SQL_IP]_ // Podajemy IP naszej bazy danych (Narazie tylko mysql)
@@ -83,6 +84,7 @@ wszystkiego)
 ## Fast Setup
 Having downloaded our repository we must define local environ. Open local cmd and type the commands (For windows):
 - _set FLASK_APP=sensopark.py_ 
+- _set SECRET_KEY=[SECRET KEY] // Here we type the secret key
 - _set_ MAIL_USERNAME=[GMAIL EMAIL]_ // Here we type the gmail adress (Remember to turn on a third person access in account settings) 
 - _set_ MAIL_PASSWORD=[GMAIL PASSWORD] _// Type the password
 - _set_ SQL_IP=[SQL_IP] _ // We enter the IP address in our database
