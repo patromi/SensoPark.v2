@@ -57,16 +57,6 @@ def admin_panel():
         name = models.User.query.filter_by(id=i.user_id).first()
         list.append(name.username)
         list2.append(name.subname)
-    # list = []
-    # list2= []
-    # for i in x:
-    #    list.append(i.user_id)
-    # for d in list:
-    #  user = models.User.query.filter_by(id=d).first()
-    #  user = user.email
-    #   list2.append(user)
-    # print(list2)
-    # print(list)
     return render_template('panelAdminParkingList.html', people=x, list=list, list2=list2)
 
 
@@ -76,8 +66,6 @@ def admin_panel():
 def admin_create_parking_panel():
     form = LoginForm()
     if request.method == 'POST':
-        # subname= form.subname.data, phonenumber = form.phonenumber.data
-        # if not validate_email(form.email.data) and validate_username(form.firstname.data):
         parking = models.Parking(user_id=form.user_id.data, adress=form.adress.data,
                                  number_of_parkings=form.number_of_parkings.data,
                                  name=form.name.data, description=form.description.data,
@@ -85,8 +73,6 @@ def admin_create_parking_panel():
         db.session.add(parking)
         db.session.commit()
         return redirect(url_for('main.index'))
-        # else:
-        #   flash('Ten email już istnieje!')
     return render_template('create_parking.html', form=form)
 
 
